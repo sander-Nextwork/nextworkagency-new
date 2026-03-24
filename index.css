@@ -1,0 +1,334 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Nextwork Agency Design System */
+    --background: 0 0% 100%;
+    --foreground: 213 62% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 62% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 62% 15%;
+
+    /* Primary: Dark Blue #0D2240 */
+    --primary: 213 62% 15%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Light grey for backgrounds */
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 213 62% 15%;
+
+    /* Muted colors */
+    --muted: 0 0% 96%;
+    --muted-foreground: 215 14% 45%;
+
+    /* Accent */
+    --accent: 213 62% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Light blue accent for gradients and sections */
+    --accent-light: 210 100% 96%;
+    --accent-glow: 210 60% 80%;
+    --section-blue: 213 80% 95%;
+    
+    /* Gradient section backgrounds */
+    --section-gradient-start: 213 50% 20%;
+    --section-gradient-end: 213 80% 95%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border - #E8E8E8 */
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 213 62% 15%;
+
+    --radius: 0.5rem;
+
+    /* Custom Nextwork tokens */
+    --navy: 213 62% 15%;
+    --navy-light: 213 45% 25%;
+    --grey-divider: 0 0% 91%;
+    --text-body: 215 14% 35%;
+    --star-gold: 45 93% 47%;
+
+    /* Sidebar tokens */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 213 62% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 213 62% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 213 62% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 213 62% 15%;
+
+    --secondary: 213 45% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 213 45% 15%;
+    --muted-foreground: 215 14% 65%;
+
+    --accent: 213 45% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --accent-light: 210 50% 20%;
+    --accent-glow: 210 40% 30%;
+    --section-blue: 213 50% 12%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 213 45% 20%;
+    --input: 213 45% 20%;
+    --ring: 0 0% 80%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+
+  .section-padding-mobile {
+    @apply py-12 md:py-20 lg:py-24;
+  }
+
+  .container-narrow {
+    @apply max-w-[880px] mx-auto px-5 md:px-6;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-5 md:px-6;
+  }
+
+  .text-body {
+    @apply text-muted-foreground leading-relaxed;
+  }
+
+  .divider {
+    @apply border-t border-border;
+  }
+
+  /* Section backgrounds */
+  .section-white {
+    @apply bg-background;
+  }
+
+  .section-light-blue {
+    background: linear-gradient(180deg, hsl(213 70% 94%) 0%, hsl(213 80% 97%) 100%);
+  }
+
+  .section-grey-blue {
+    background: linear-gradient(180deg, hsl(213 40% 95%) 0%, hsl(213 50% 97%) 100%);
+  }
+
+  /* Darker blue gradient sections */
+  .section-gradient-dark {
+    background: linear-gradient(180deg, hsl(213 50% 18%) 0%, hsl(213 60% 25%) 50%, hsl(213 70% 92%) 100%);
+  }
+
+  .section-fade-blue {
+    background: linear-gradient(180deg, hsl(213 60% 92%) 0%, hsl(var(--background)) 100%);
+  }
+
+  /* Premium card hover effect - enhanced */
+  .card-hover-premium {
+    @apply transition-all duration-300 ease-out;
+    box-shadow: 0 2px 8px -2px hsl(var(--primary) / 0.06);
+  }
+
+  .card-hover-premium:hover {
+    box-shadow: 0 8px 32px -8px hsl(var(--accent-glow) / 0.5), 0 4px 16px -4px hsl(var(--primary) / 0.1);
+    transform: translateY(-3px);
+  }
+
+  /* Team card hover */
+  .team-card-hover {
+    @apply transition-all duration-300 ease-out;
+    box-shadow: 0 2px 8px -2px hsl(var(--primary) / 0.06);
+  }
+
+  .team-card-hover:hover {
+    box-shadow: 0 8px 30px -8px hsl(var(--accent-glow) / 0.6);
+    transform: translateY(-3px);
+  }
+
+  /* Hero gradient background - soft blue fade */
+  .hero-gradient {
+    background: linear-gradient(180deg, hsl(213 70% 92%) 0%, hsl(210 80% 96%) 40%, hsl(210 100% 99%) 80%, hsl(var(--background)) 100%);
+  }
+
+  /* Header with subtle blue */
+  .header-bg {
+    background-color: hsl(213 70% 94% / 0.98);
+  }
+}
+
+@layer utilities {
+  /* Logo slider animation */
+  @keyframes logo-marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-logo-marquee {
+    animation: logo-marquee var(--logo-marquee-duration, 26s) linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 22s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  /* Review slider animation - faster */
+  @keyframes scroll-slow {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-scroll-slow {
+    animation: scroll-slow 28s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-scroll-slow:hover {
+    animation-play-state: paused;
+  }
+
+  /* Fade in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out both;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+    will-change: opacity, transform;
+  }
+
+  .scroll-reveal-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll,
+    .animate-scroll-slow,
+    .animate-logo-marquee,
+    .animate-fade-in-up {
+      animation: none !important;
+      transform: none !important;
+    }
+
+    .scroll-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
